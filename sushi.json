@@ -1,0 +1,383 @@
+[
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "Угорь",
+      "сливочный сыр",
+      "такуан, икра",
+      "Тобико",
+      "кунжут",
+      "соус унаги",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 1,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FALASKA.jpg?alt=media&token=d7936a8f-bbb2-4526-81bd-55e8bdc2091d",
+    "title": "АЛЯСКА",
+    "rating": 5,
+    "price": 260
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "Бекон",
+      "сливочный сыр",
+      "огурец",
+      "кунжут",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 2,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FBANSAI.jpg?alt=media&token=7ecd13e8-4f1e-4976-81c4-0a6b0407b5b4",
+    "title": "Бансай",
+    "rating": 5,
+    "price": 240
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "Тунец",
+      "сливочный сыр",
+      "лосось слабосоленый",
+      "огурец",
+      "стружка тунца",
+      "рис"
+    ],
+    "sizes": [2, 3],
+    "types": [1],
+    "currency": "₽",
+    "id": 3,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FBONITO-MAKI.jpg?alt=media&token=3ba27040-3387-474a-924b-cb0982e2d9a6",
+    "title": "Бонита Маки",
+    "rating": 1,
+    "price": 270
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "Креветка",
+      "икра Тобико",
+      "сливочный сыр",
+      "огурец",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 4,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FBOSTON.jpg?alt=media&token=de5c488e-222e-4123-b331-fbb18ec2639e",
+    "title": "Бостон",
+    "rating": 1,
+    "price": 250
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "Угорь",
+      "сливочный сыр",
+      "такуан",
+      "икра Тобико",
+      "кунжут",
+      "соус унаги",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 5,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FDRAGON-LIGHT.jpg?alt=media&token=d8bf4e6c-c22c-468e-b3b0-72b65bc94226",
+    "title": "Дракон Лайт",
+    "rating": 3,
+    "price": 260
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "икра Тобико",
+      "имитация краба",
+      "сливочный сыр",
+      "огурец",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 6,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FCALIFORNIA.jpg?alt=media&token=ed05ae79-9347-4b77-a231-e17aa3b667ef",
+    "title": "Калифорния",
+    "rating": 4,
+    "price": 340
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "Лосось слабосоленый",
+      "огурец",
+      "сливочный сыр",
+      "икра лососевая",
+      "укроп",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 7,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FMOSCOW.jpg?alt=media&token=6151581c-44c6-439a-bd4a-18deb69e932d",
+    "title": "Москва",
+    "rating": 2,
+    "price": 290
+  },
+  {
+    "amount": 4,
+    "category": "rolls",
+    "composition": ["Лосось слабосоленый", "рис", "нори"],
+    "sizes": [2, 3, 4],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 8,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FSYAKE-MAKI.jpg?alt=media&token=e7ea4a20-9105-463e-9fde-2e58e7578398",
+    "title": "Сяке Маки",
+    "rating": 5,
+    "price": 220
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": ["Лосось слабосоленый", "сливочный сыр", "рис", "нори"],
+    "sizes": [2, 3],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 9,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FPHILADELPHIA.jpg?alt=media&token=611f9d61-f896-4ba6-a3a7-704cf57db4c0",
+    "title": "Филадельфия",
+    "rating": 4,
+    "price": 430
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "Лосось слабосоленый",
+      "сливочный сыр",
+      "зелёный лук",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 10,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FPHILADELPHIA-LIGHT.jpg?alt=media&token=f2e7ffc5-87b2-4e15-86ea-1ec625b72f8e",
+    "title": "Филадельфия лайт",
+    "rating": 5,
+    "price": 249
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "Лосось слабосоленый",
+      "икра масаго",
+      "огурец",
+      "сливочный сыр",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 11,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FPHILADELPHIA-SUITE.jpg?alt=media&token=7065c618-c87c-4fcc-a0ed-482745920988",
+    "title": "Филадельфия люкс",
+    "rating": 3,
+    "price": 550
+  },
+  {
+    "amount": 1,
+    "category": "rolls",
+    "composition": [
+      "огурец",
+      "перец болгарский",
+      "капуста пекинская",
+      "рис",
+      "нори"
+    ],
+    "sizes": [2, 3],
+    "types": [0, 1],
+    "currency": "₽",
+    "id": 12,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Rolls%2FYASAY-MAKI.jpg?alt=media&token=0b0236c9-7ce5-4a60-b904-09f07ab7a696",
+    "title": "Ясай маки",
+    "rating": 4,
+    "price": 290
+  },
+  {
+    "amount": 250,
+    "category": "sets",
+    "composition": [
+      "Ролл Акира (20 шт.)",
+      "Ролл Нагаи (10 шт.)",
+      "Ролл Аляска (10 шт.)",
+      "Ролл Калифорния"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 13,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Sets%2FLEGEND.jpg?alt=media&token=9a935ed1-5e63-4cca-9b40-c0dfe9427ebe",
+    "title": "Легенда",
+    "rating": 5,
+    "price": 5555
+  },
+  {
+    "amount": 20,
+    "category": "sets",
+    "composition": [
+      "Ролл Лава (10 шт.)",
+      "Ролл Филадельфия лайт (5 шт.)",
+      "Ролл Аляска (5 шт.)"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 14,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Sets%2FHOME-ALONE.jpg?alt=media&token=916bb9b9-e347-4bc3-af86-60669d26f7a0",
+    "title": "Один дома",
+    "rating": 2,
+    "price": 799
+  },
+  {
+    "amount": 30,
+    "category": "sets",
+    "composition": [
+      " Ролл с сыром сливочным (5 шт.)",
+      "Ролл в стружке тунца (5 шт.)",
+      "Ролл с лососем"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 15,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Sets%2FOPTIMA.jpg?alt=media&token=2d55fb61-aba6-4e82-8055-bcdcdf45bbda",
+    "title": "Оптима",
+    "rating": 1,
+    "price": 949
+  },
+  {
+    "amount": 35,
+    "category": "sets",
+    "composition": [
+      "Ролл Филадельфия (5 шт.)",
+      "Ролл Калифорния (5 шт.)",
+      "Ролл Флорида (5 шт.)"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 16,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Sets%2FTOKYO-MIX.jpg?alt=media&token=704f34ab-46c2-405d-a132-a5c7ed39a74f",
+    "title": "Токио MIX",
+    "rating": 2,
+    "price": 789
+  },
+  {
+    "amount": 22,
+    "category": "sets",
+    "composition": [
+      "Ролл Калифорния (5 шт.)",
+      "Ролл Лава (5 шт.)",
+      "Ролл Бансай (5 шт.)",
+      "Ролл Ясай (5 шт.)"
+    ],
+    "sizes": [2, 3, 4],
+    "types": [1],
+    "currency": "₽",
+    "id": 17,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Sets%2FFUDI.jpg?alt=media&token=9d208d1c-5201-4313-8449-96f57fb6eeca",
+    "title": "Фуди-Хот",
+    "rating": 3,
+    "price": 699
+  },
+  {
+    "amount": 1,
+    "category": "spice",
+    "composition": ["Корень васаби"],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 18,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Spice%2FWASABI.jpg?alt=media&token=94096957-e9ad-40ca-bbed-e25d3b81029e",
+    "title": "Васаби",
+    "rating": 70,
+    "price": 20
+  },
+  {
+    "amount": 1,
+    "category": "spice",
+    "composition": ["Корень имбиря"],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 19,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Spice%2FGINGER.jpg?alt=media&token=f7f111ad-d610-4033-9712-2789736b697c",
+    "title": "Имбирь",
+    "rating": 4,
+    "price": 20
+  },
+  {
+    "amount": 1,
+    "category": "spice",
+    "composition": ["Вода, соя"],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 20,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Spice%2FSOY-SAUCE.jpg?alt=media&token=671223e6-eb7e-4150-b4dd-3707b4c448d4",
+    "title": "Соевый соус",
+    "rating": 3,
+    "price": 39
+  },
+  {
+    "amount": 1,
+    "category": "sushi",
+    "composition": ["рис", "лосось слабосоленый"],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 21,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Sushi%2FSUSHI-WITH-SALMON.jpg?alt=media&token=3774a6f4-ea60-42cf-879e-d76ecec57ce6",
+    "title": "Суши с лососем ",
+    "rating": 1,
+    "price": 49
+  },
+  {
+    "amount": 1,
+    "category": "sushi",
+    "composition": ["рис", "угорь", "нори", "соус унаги", "кунжут"],
+    "sizes": [2, 3, 4],
+    "types": [0],
+    "currency": "₽",
+    "id": 22,
+    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/react-sushi-shop.appspot.com/o/Sushi%2FSUSHI-WITH-EEL.jpg?alt=media&token=4765a2bf-a3f6-4265-8cdf-2ea0bb419987",
+    "title": "Суши с угрём",
+    "rating": 4,
+    "price": 59
+  }
+]

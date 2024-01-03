@@ -1,37 +1,46 @@
 import React from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 
-import Categories from "../components/Categories";
+// redux
+import {
+  setCategoryID,
+  setSort,
+  setCurrentPage,
+} from "../redux/slices/filterSlice";
+
 import Sort from "../components/Sort";
-import SushiBlock from "../components/SushiBlock/SushiBlock";
-import Skeleton from "../components/SushiBlock/Skeleton";
-import { SearchFoodContext } from "../components/Context/SearchFoodContext";
+import Categories from "../components/Categories";
 import Pagination from "../components/Pagination";
+import Skeleton from "../components/SushiBlock/Skeleton";
+import SushiBlock from "../components/SushiBlock/SushiBlock";
+import { SearchFoodContext } from "../components/Context/SearchFoodContext";
 
 export default function Home() {
+  const { categoryID, sort, currentPage } = useSelector(
+    (state) => state.filter
+  );
+  const dispatch = useDispatch();
+
   const [sushiList, setSushiList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-  const [categoryID, setCategoryID] = React.useState(0);
-  const [sort, setSort] = React.useState({
-    name: "самые популярные",
-    sortProperty: "-rating",
-  });
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const [pagesList, setPageList] = React.useState("");
+  const [pageList, setPageList] = React.useState("");
 
   const { inputValue } = React.useContext(SearchFoodContext);
 
   React.useEffect(() => {
     setIsLoading(true);
 
-    const filter = `${categoryID > 0 ? `&category=${categoryID}` : ""}`;
-    const sortBy = `${sort.sortProperty ? `&sortBy=${sort.sortProperty}` : ""}`;
-    const search = `${inputValue.length > 0 ? `&title=*${inputValue}` : ""}`;
+    const filterReq = `${categoryID > 0 ? `&category=${categoryID}` : ""}`;
+    const sortByReq = `${
+      sort.sortProperty ? `&sortBy=${sort.sortProperty}` : ""
+    }`;
+    const searchReq = `${inputValue.length > 0 ? `&title=*${inputValue}` : ""}`;
 
     (async function fetchSushi() {
       try {
         const response = await axios.get(
-          `https://6ecb02a0c4ef18fe.mokky.dev/sushi?${filter}${sortBy}${search}&page=${currentPage}&limit=8`
+          `https://6ecb02a0c4ef18fe.mokky.dev/sushi?${filterReq}${sortByReq}${searchReq}&page=${currentPage}&limit=8`
         );
         setSushiList(response.data.items);
         setPageList(response.data.meta.total_pages);
@@ -53,16 +62,16 @@ export default function Home() {
       <div className="content__top">
         <Categories
           value={categoryID}
-          onClickCategory={(i) => setCategoryID(i)}
+          onClickCategory={(id) => dispatch(setCategoryID(id))}
         />
-        <Sort value={sort} onClickSort={(id) => setSort(id)} />
+        <Sort value={sort} onClickSort={(id) => dispatch(setSort(id))} />
       </div>
       <h2 className="content__title">Все роллы</h2>
       <div className="content__items">{isLoading ? skeleton : sushi}</div>
       <Pagination
-        pagesList={pagesList}
+        pageList={pageList}
         value={currentPage}
-        onChangePage={(page) => setCurrentPage(page)}
+        onChangePage={(page) => dispatch(setCurrentPage(page))}
       />
     </>
   );

@@ -7,12 +7,12 @@ import { SearchFoodContext } from "./components/Context/SearchFoodContext";
 
 export default function App() {
   const [inputValue, setInputValue] = React.useState("");
-  const inputType = { inputValue, setInputValue };
+  // const inputType = { inputValue, setInputValue };
 
   return (
     <>
       <div className="wrapper">
-        <SearchFoodContext.Provider value={inputType}>
+        <SearchFoodContext.Provider value={{ inputValue, setInputValue }}>
           <Header />
           <div className="content">
             <div className="container">

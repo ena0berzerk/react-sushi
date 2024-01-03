@@ -1,36 +1,36 @@
 import React from "react";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
 
+const sortList = [
+  {
+    name: "самые популярные",
+    sortProperty: "-rating",
+  },
+  {
+    name: "менее популярные",
+    sortProperty: "rating",
+  },
+
+  {
+    name: "по алфавиту [А-Я]",
+    sortProperty: "title",
+  },
+  {
+    name: "по алфавиту [Я-А]",
+    sortProperty: "-title",
+  },
+  {
+    name: "цена по возрастанию",
+    sortProperty: "price",
+  },
+  {
+    name: "цена по убыванию",
+    sortProperty: "-price",
+  },
+];
+
 export default function Sort({ value, onClickSort }) {
   const [popup, setPopup] = React.useState(false);
-
-  const sortList = [
-    {
-      name: "самые популярные",
-      sortProperty: "-rating",
-    },
-    {
-      name: "менее популярные",
-      sortProperty: "rating",
-    },
-
-    {
-      name: "по алфавиту [А-Я]",
-      sortProperty: "title",
-    },
-    {
-      name: "по алфавиту [Я-А]",
-      sortProperty: "-title",
-    },
-    {
-      name: "цена по возрастанию",
-      sortProperty: "price",
-    },
-    {
-      name: "цена по убыванию",
-      sortProperty: "-price",
-    },
-  ];
 
   function handleSortSelected(property) {
     onClickSort(property);

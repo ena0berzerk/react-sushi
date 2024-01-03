@@ -2,8 +2,8 @@ import React from "react";
 
 import classes from "./Pagination.module.scss";
 
-export default function Pagination({ value, onChangePage, pagesList }) {
-  const pages = Array.from(Array(pagesList), (_, i) => i + 1);
+export default function Pagination({ value, onChangePage, pageList }) {
+  const pages = Array.from(Array(pageList), (_, i) => i + 1);
 
   return (
     <>

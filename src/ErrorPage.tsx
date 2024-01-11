@@ -1,11 +1,14 @@
 import React from "react";
-import { useRouteError } from "react-router-dom";
+import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 
 import "./styles/ErrorPage.scss";
 
-export default function ErrorPage() {
-  const error = useRouteError();
-  console.log(error);
+const ErrorPage: React.FC = () => {
+  const error = useRouteError() as Error;
+
+  if (!isRouteErrorResponse(error)) {
+    return null;
+  }
 
   return (
     <div className="error-container">
@@ -18,4 +21,6 @@ export default function ErrorPage() {
       </div>
     </div>
   );
-}
+};
+
+export default ErrorPage;

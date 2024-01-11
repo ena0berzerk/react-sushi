@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./NotFoundBlock.module.scss";
 
-export default function NotFoundBlock() {
+const NotFoundBlock: React.FC = () => {
   return (
     <div className={classes.root}>
       <h1>Упс!</h1>
@@ -10,4 +10,6 @@ export default function NotFoundBlock() {
       <span>Извините, но такой страницы не существует</span>
     </div>
   );
-}
+};
+
+export default NotFoundBlock;

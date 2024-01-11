@@ -1,7 +1,17 @@
 import React from "react";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
 
-const sortList = [
+type SortItems = {
+  name: string;
+  sortProperty: string;
+};
+
+type SortProps = {
+  value: SortItems;
+  onClickSort: (obj: SortItems) => void;
+};
+
+const sortList: SortItems[] = [
   {
     name: "самые популярные",
     sortProperty: "-rating",
@@ -29,17 +39,38 @@ const sortList = [
   },
 ];
 
-export default function Sort({ value, onClickSort }) {
-  const [popup, setPopup] = React.useState(false);
+type PopupClick = MouseEvent & {
+  path: Node[];
+};
 
-  function handleSortSelected(property) {
-    onClickSort(property);
+const Sort: React.FC<SortProps> = ({ value, onClickSort }) => {
+  const [popup, setPopup] = React.useState(false);
+  const sortRef = React.useRef<HTMLDivElement>(null);
+
+  function handleSortSelected(obj: SortItems) {
+    onClickSort(obj);
     setPopup(!popup);
   }
 
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const _event = event as PopupClick;
+      if (sortRef.current && !_event.composedPath().includes(sortRef.current)) {
+        setPopup(false);
+      }
+    };
+
+    const body = document.body;
+    body.addEventListener("click", handleClickOutside);
+
+    return () => {
+      body.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
-      <div className="sort">
+      <div ref={sortRef} className="sort">
         <div className="sort__label">
           {popup ? <GoTriangleDown /> : <GoTriangleUp />}
           <b>Сортировка по:</b>
@@ -68,4 +99,6 @@ export default function Sort({ value, onClickSort }) {
       </div>
     </>
   );
-}
+};
+
+export default Sort;

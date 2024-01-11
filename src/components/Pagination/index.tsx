@@ -2,8 +2,13 @@ import React from "react";
 
 import classes from "./Pagination.module.scss";
 
-export default function Pagination({ value, onChangePage, pageList }) {
-  const pages = Array.from(Array(pageList), (_, i) => i + 1);
+type PaginationProps = {
+  value: number;
+  onChangePage: (page: number) => void;
+};
+
+const Pagination: React.FC<PaginationProps> = ({ value, onChangePage }) => {
+  const pages: number[] = Array.from(Array(3), (_, i) => i + 1);
 
   return (
     <>
@@ -24,4 +29,6 @@ export default function Pagination({ value, onChangePage, pageList }) {
       </div>
     </>
   );
-}
+};
+
+export default Pagination;

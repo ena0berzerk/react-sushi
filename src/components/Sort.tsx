@@ -1,17 +1,13 @@
 import React from "react";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
-
-type SortItems = {
-  name: string;
-  sortProperty: string;
-};
+import { TSortProperty } from "../redux/filter/types";
 
 type SortProps = {
-  value: SortItems;
-  onClickSort: (obj: SortItems) => void;
+  value: TSortProperty;
+  onClickSort: (obj: TSortProperty) => void;
 };
 
-const sortList: SortItems[] = [
+const sortList: TSortProperty[] = [
   {
     name: "самые популярные",
     sortProperty: "-rating",
@@ -43,11 +39,11 @@ type PopupClick = MouseEvent & {
   path: Node[];
 };
 
-const Sort: React.FC<SortProps> = ({ value, onClickSort }) => {
+const Sort: React.FC<SortProps> = React.memo(({ value, onClickSort }) => {
   const [popup, setPopup] = React.useState(false);
   const sortRef = React.useRef<HTMLDivElement>(null);
 
-  function handleSortSelected(obj: SortItems) {
+  function handleSortSelected(obj: TSortProperty) {
     onClickSort(obj);
     setPopup(!popup);
   }
@@ -99,6 +95,6 @@ const Sort: React.FC<SortProps> = ({ value, onClickSort }) => {
       </div>
     </>
   );
-};
+});
 
 export default Sort;

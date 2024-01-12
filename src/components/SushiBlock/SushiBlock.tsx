@@ -2,17 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addItems, selectCartById } from "../../redux/slices/cartSlice";
+import { addItems } from "../../redux/cart/slice";
+import { selectCartById } from "../../redux/cart/selectors";
 
 type SushiProps = {
   id: number;
   price: number;
-  sizes: number;
   count: number;
   title: string;
-  types: string;
   imageUrl: string;
-  composition: string;
+  sizes: number[];
+  types: string[];
+  composition: string[];
 };
 
 const typesName: string[] = ["холодный", "горячий"];
@@ -25,6 +26,7 @@ const SushiBlock: React.FC<SushiProps> = ({
   types,
   price,
   id,
+  count,
 }) => {
   const [activeType, setActiveType] = React.useState<number>(0);
   const [activeSize, setActiveSize] = React.useState<number>(0);
@@ -41,6 +43,7 @@ const SushiBlock: React.FC<SushiProps> = ({
       imageUrl,
       sizes: activeSize,
       types: typesName[activeType],
+      count,
     };
     dispatch(addItems(item));
   };
@@ -63,14 +66,14 @@ const SushiBlock: React.FC<SushiProps> = ({
         </Link>
         <div className="pizza-block__selector">
           <ul>
-            {types.map((type: number, index: number) => {
+            {types.map((type, index) => {
               return (
                 <li
                   key={type}
                   onClick={() => setActiveType(index)}
                   className={activeType === index ? "active" : ""}
                 >
-                  {typesName[type]}
+                  {typesName[index]}
                 </li>
               );
             })}

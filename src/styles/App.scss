@@ -553,6 +553,26 @@ body {
 .cart__item-count-minus svg path:first-of-type {
   display: none;
 }
+
+.cart__item-count-minus {
+  &:disabled {
+    background-color: rgba(116, 115, 115, 0.5);
+    color: color;
+    border: rgb(138, 137, 137);
+    svg path {
+      fill: white;
+    }
+    &:hover {
+      color: none;
+      background-color: none;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+}
+
 .cart__item-count b {
   font-size: 22px;
 }

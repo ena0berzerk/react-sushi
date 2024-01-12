@@ -1,14 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 // redux
-import {
-  setCategoryID,
-  setSort,
-  setCurrentPage,
-  selectorFilter,
-} from "../redux/slices/filterSlice";
-import { fetchSushi, selectorSushi } from "../redux/slices/sushiSlice";
+import { setCategoryID, setSort, setCurrentPage } from "../redux/filter/slice";
+import { selectorFilter } from "../redux/filter/selectors";
+import { fetchSushi } from "../redux/sushi/slice";
+import { selectorSushi } from "../redux/sushi/selectors";
 
 import Sort from "../components/Sort";
 import Categories from "../components/Categories";
@@ -16,6 +13,7 @@ import Pagination from "../components/Pagination";
 import Skeleton from "../components/SushiBlock/Skeleton";
 import SushiBlock from "../components/SushiBlock/SushiBlock";
 import ErrorSushiBlock from "../components/SushiBlock/ErrorSushiBlock";
+import { useAppDispatch } from "../redux/store";
 
 const Home: React.FC = () => {
   const { categoryID, sort, currentPage, searchValue } =
@@ -23,7 +21,7 @@ const Home: React.FC = () => {
 
   const { items, status } = useSelector(selectorSushi);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     const filterReq = `${categoryID > 0 ? `&category=${categoryID}` : ""}`;
@@ -39,7 +37,7 @@ const Home: React.FC = () => {
         filterReq,
         sortByReq,
         searchReq,
-        currentPage,
+        currentPage: String(currentPage),
       })
     );
 
@@ -62,11 +60,14 @@ const Home: React.FC = () => {
       <div className="content__top">
         <Categories
           value={categoryID}
-          onClickCategory={(id: number) => dispatch(setCategoryID(id))}
+          onClickCategory={React.useCallback(
+            (id: number) => dispatch(setCategoryID(id)),
+            []
+          )}
         />
         <Sort
           value={sort}
-          onClickSort={(id: number) => dispatch(setSort(id))}
+          onClickSort={React.useCallback((id) => dispatch(setSort(id)), [])}
         />
       </div>
       <h2 className="content__title">Все роллы</h2>

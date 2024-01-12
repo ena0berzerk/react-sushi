@@ -1,31 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { getCartFromLS } from "../../utils/getCartFromLS";
+import { caclTotalPrice } from "../../utils/calcTotalPrice";
+import { ICartSlice, ID, TItems } from "./types";
 
-type TItems = {
-  title: string;
-  price: number;
-  sizes: number;
-  types: string;
-  imageUrl: string;
-  id: number;
-  count: number;
-};
-
-interface ICartSlice {
-  totalPrice: number;
-  items: TItems[];
-}
-
-const initialState: ICartSlice = {
-  items: [],
-  totalPrice: 0,
-};
+const initialState: ICartSlice = getCartFromLS()!;
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItems(state, action) {
+    addItems(state, action: PayloadAction<TItems>) {
       const findItem = state.items.find(
         (item) => item.id === action.payload.id
       );
@@ -38,9 +22,9 @@ export const cartSlice = createSlice({
         });
       }
 
-      state.totalPrice += Number(action.payload.price);
+      state.totalPrice = caclTotalPrice(state.items);
     },
-    removeItem(state, action) {
+    removeItem(state, action: PayloadAction<number>) {
       const removedItem = (state.items = state.items.filter(
         (item) => item.id !== action.payload
       ));
@@ -55,7 +39,7 @@ export const cartSlice = createSlice({
       state.totalPrice = 0;
     },
 
-    minusSushi(state, action) {
+    minusSushi(state, action: PayloadAction<ID>) {
       const findItem = state.items.find(
         (item) => item.id === action.payload.id
       );
@@ -68,11 +52,6 @@ export const cartSlice = createSlice({
     },
   },
 });
-
-// selectors
-export const selectCart = (state: RootState) => state.cart;
-export const selectCartById = (id: number) => (state: RootState) =>
-  state.cart.items.find((item) => item.id === id);
 
 export const { addItems, removeItem, clearItem, minusSushi } =
   cartSlice.actions;

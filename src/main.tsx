@@ -1,21 +1,28 @@
+import { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
+import loadable from "@loadable/component";
 
-import { store } from "./redux/store.ts";
+import { store } from "./redux/store";
 
 import App from "./App";
 import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import ErrorPage from "./ErrorPage";
-import NotFound from "./pages/NotFound";
-import FullPizza from "./components/FullPizza";
+
+const Cart = loadable(() => import("./pages/Cart"));
+const ErrorPage = loadable(() => import("./ErrorPage"));
+const NotFound = loadable(() => import("./pages/NotFound"));
+const FullPizza = loadable(() => import("./components/FullPizza"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <Suspense fallback={<div>Идёт загрузка...</div>}>
+        <ErrorPage />
+      </Suspense>
+    ),
     children: [
       {
         index: true,

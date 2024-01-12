@@ -1,15 +1,17 @@
 import React from "react";
 import { LuShoppingCart } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import CartItem from "./CartItem";
-import { clearItem, selectCart } from "../../redux/slices/cartSlice";
+import { clearItem } from "../../redux/cart/slice";
+import { selectCart } from "../../redux/cart/selectors";
 import CartEmpty from "./CartEmpty";
+import { useAppDispatch } from "../../redux/store";
 
 const CartBlock = () => {
   const cart = useSelector(selectCart);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const amountSushi = cart.items.reduce(
     (acc: number, item: any) => (acc += item.count),
     0

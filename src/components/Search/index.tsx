@@ -6,7 +6,7 @@ import debounce from "lodash.debounce";
 
 import classes from "./Search.module.scss";
 import { iconSearch, iconRemoveInputValue } from "../../styles/iconsStyle";
-import { setSearchValue } from "../../redux/slices/filterSlice";
+import { setSearchValue } from "../../redux/filter/slice";
 
 const Search: React.FC = () => {
   const dispatch = useDispatch();

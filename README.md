@@ -1,10 +1,13 @@
-# React + Vite
+# React Sushi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![rps](https://github.com/ena0berzerk/react-sushi/assets/110235307/5a364840-c0b2-44aa-931c-9d33a8450cd2)
 
-Currently, two official plugins are available:
+### Preview: 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технологии
 
-- alt + shift + l - change all the same words
+React
+Typescript
+React-Router
+Redux Toolkit
+Axios
